@@ -60,7 +60,7 @@ router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   Tag.update(req.body, {
     where: {
-      id: req.body.id
+      id: req.params.id
     }
   }).then(dbCategory => {
     if (!dbCategory) {
@@ -78,11 +78,11 @@ router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
   Tag.destroy({
     where: {
-      id: req.body.id
+      id: req.params.id
     }
   }).then(dbCategory => {
     if (!dbCategory) {
-      res.status(404).json({ message: 'No user found with this id' });
+      res.status(404).json({ message: 'No tag found with this id' });
       return;
     }
     res.json(dbCategory)
