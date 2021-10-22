@@ -8,8 +8,7 @@ router.get('/', (req, res) => {
   // find all categories
   // be sure to include its associated Products
   Category.findAll({
-    include: 
-      {
+    include: {
         model: Product,
         attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
       }
@@ -29,8 +28,7 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     
-    include: 
-      {
+    include: {
         model: Product,
         attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
       }
@@ -50,7 +48,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new category
   Category.create({
-    category: req.body.category
+    category_name: req.body.category_name
   }).then(dbCategory => res.json(dbCategory))
     .catch(err => {
       console.log(err);
@@ -84,7 +82,7 @@ router.delete('/:id', (req, res) => {
     }
   }).then(dbCategory => {
     if (!dbCategory) {
-      res.status(404).json({ message: 'No user found with this id' });
+      res.status(404).json({ message: 'No category found with this id' });
       return;
     }
     res.json(dbCategory)

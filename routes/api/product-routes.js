@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Category,
-        attributes: ['id', 'category']
+        attributes: ['id', 'category_name']
       },
       {
         model: Tag,
@@ -33,13 +33,13 @@ router.get('/:id', (req, res) => {
   // be sure to include its associated Category and Tag data
   Product.findOne({
     where: {
-      id: HTMLTableRowElement.params.id
+      id: req.params.id
     },
     attributes: ['id', 'product_name', 'price', 'stock'],
     include: [
       {
         model: Category,
-        attributes: ['id', 'category']
+        attributes: ['id', 'category_name']
       },
       {
         model: Tag,
