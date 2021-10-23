@@ -23,7 +23,7 @@ To install just clone the repository to your local machine. After the repository
 This application is simply a mock back-end of an e-commerce website. The application only functions through a API client that can GET, POST, PUT, and DELETE data. If the user choses they can manipulate the data as they see fit using an API client. 
 
 ## Walkthrough Video
-[Watch Walkthough] 
+[Watch Walkthough](https://watch.screencastify.com/v/ssOFG0XI8lm7cVgbo1ie) 
 
 ## Credits
 [Shane Purgason](https://github.com/spurgason)
